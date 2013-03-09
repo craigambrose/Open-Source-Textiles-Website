@@ -3,8 +3,10 @@
 ###
 
 # Susy grids in Compass
-# First: gem install susy
+# First: gem install susy --pre
 # require 'susy'
+require 'sassy-buttons'
+require 'rgbapng'
 
 # Change Compass configuration
 # compass_config do |config|
@@ -38,7 +40,7 @@
 ###
 
 # Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
+activate :automatic_image_sizes
 
 # Methods defined in the helpers block are available in templates
 # helpers do
@@ -47,31 +49,57 @@
 #   end
 # end
 
+# Slim configuration
+set :slim, {
+  :format  => :html5,
+  :attr_wrapper => '"',
+  :indent => '    ',
+  :pretty => true,
+  :sort_attrs => false
+}
+
+# Assets PATH
 set :css_dir, 'stylesheets'
-
 set :js_dir, 'javascripts'
-
 set :images_dir, 'images'
+
+
+# Livereload
+# use: https://github.com/middleman/middleman-livereload
+activate :livereload
+
+
 
 # Build-specific configuration
 configure :build do
-  # For example, change the Compass output style for deployment
-  # activate :minify_css
 
-  # Minify Javascript on build
-  # activate :minify_javascript
+  # Or use a different image path
+  # set :http_path, "/Content/images/"
+
+  # Make favicons
+  # use: https://github.com/follmann/middleman-favicon-maker
+  activate :favicon_maker
+
+  # Minify
+  # see: https://github.com/middleman/middleman-guides/blob/master/source/advanced/file-size-optimization.html.markdown#compressing-images
+  activate :minify_css
+  activate :minify_javascript
 
   # Enable cache buster
-  # activate :cache_buster
+  # see: https://github.com/middleman/middleman-guides/blob/master/source/advanced/improving-cacheability.html.markdown#cache-buster-in-query-string
+  activate :cache_buster
 
   # Use relative URLs
   # activate :relative_assets
 
   # Compress PNGs after build
-  # First: gem install middleman-smusher
-  # require "middleman-smusher"
-  # activate :smusher
+  # use: https://github.com/middleman/middleman-smusher
+  activate :smusher
 
-  # Or use a different image path
-  # set :http_path, "/Content/images/"
+  # Gzip HTML, CSS, and JavaScript
+  # see: https://github.com/middleman/middleman-guides/blob/master/source/advanced/file-size-optimization.html.markdown#gzip-text-files
+  activate :gzip
+
 end
+
+

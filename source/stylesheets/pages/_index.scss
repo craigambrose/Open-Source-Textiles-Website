@@ -1,6 +1,20 @@
-.index .container {
-  h1, h2, h3, h4 {
-    font-family: "Museo Slab";
+
+.bookmark {
+  background-image: url('/images/cloth_background.png');
+  background-color: #3399FF;
+  margin-top: -25px;
+  
+  section {
+    border: 2px dashed #99CCFF;
+    padding: 20px;
+    margin: 5px;
+    color: black;
   }
 }
 
+.manifesto {
+  ol li {
+    font-size: 120%;
+    margin-bottom: 0.4em;
+  }
+}

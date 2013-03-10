@@ -12,7 +12,7 @@ body * {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: 20px;
   padding-bottom: 40px;
   background-color: #DEFCC5;
   color: black;
@@ -32,4 +32,37 @@ hr {
 
 .page-header {
   border-bottom: 2px solid #99CC66;
+}
+
+.jumbotron {
+  background-image: url('/images/noise_background.jpg');
+//    background: linear-gradient(45deg, #020031 0%, #6D3353 100%) repeat scroll 0 0 transparent;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.2) inset, 0 -3px 7px rgba(0, 0, 0, 0.2) inset;
+  color: #FFFFFF;
+  padding: 40px 0;
+  position: relative;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 0, 0, 0.075);
+  margin-top: 0;
+  margin-bottom: 2em;
+  
+  h1.page-header {
+    margin: 0.7em 0 0 0;
+    border: 0;
+    text-align: center;
+  }
+}
+.jumbotron:after {
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    opacity: 0.4;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.subhead {
+    border-bottom: 1px solid #DDDDDD;
+    text-align: left;
 }
